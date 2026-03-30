@@ -48,6 +48,8 @@ operatorButtons.forEach(button => {
 
 // ====== CREAT OPERATE FUNTION======
 function operate() {
+   if (!currentOperatior) return
+
   let parts = displayValue.split(` ${currentOperatior} `)
   firstOperand = parts [0];
   secondOperand = parts [1] || firstOperand
@@ -58,14 +60,16 @@ function operate() {
   if (currentOperatior === '-') {
     displayValue = Number(firstOperand) - Number(secondOperand);
   }
-  if (currentOperatior === "×") {
+  if (currentOperatior === "*") {
     displayValue = Number(firstOperand) * Number(secondOperand);
   }
-  if (currentOperatior === "÷") {
+  if (currentOperatior === "/") {
     displayValue = Number(firstOperand) / Number(secondOperand)
   }
 
   firstOperand = displayValue;
+  currentOperatior = null
+  shouldResetScreen = true
   updateDisplay()
 }
 
