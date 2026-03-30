@@ -19,9 +19,9 @@ const numberButtons = document.querySelectorAll(
 numberButtons.forEach(button =>{
   button.addEventListener('click',()=>{
     if (display.value === '0') {
-       display.value = button.textContent
+       displayValue = button.textContent
     } else {
-      display.value += button.textContent
+      displayValue += button.textContent
     }
     updateDisplay()
   });
