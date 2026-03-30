@@ -48,7 +48,9 @@ operatorButtons.forEach(button => {
 
 // ====== CREAT OPERATE FUNTION======
 function operate() {
-  secondOperand = displayValue;
+  let parts = displayValue.split(` ${currentOperatior} `)
+  firstOperand = parts [0];
+  secondOperand = parts [1] || firstOperand
 
   if (currentOperatior === '+') {
     displayValue = Number(firstOperand) + Number(secondOperand)
