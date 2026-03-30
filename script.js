@@ -82,6 +82,14 @@ equalButton.addEventListener('click',()=>{
     shouldResetScreen = true
 })
 
+// ====== CLEAR BUTTONS ======
+const clearButton = document.querySelector(".clear");
+// ====== CREAT A CLEAR SYSTEM ======
+clearButton.addEventListener('click',()=>{
+  displayValue = ''
+  updateDisplay()
+})
+
 // ====== UPDATE DISPLAY ======
 function updateDisplay() {
     display.value = displayValue
