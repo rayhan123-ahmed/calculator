@@ -44,6 +44,27 @@ operatorButtons.forEach(button => {
   })
 })
 
+// ====== CREAT OPERATE FUNTION======
+function operate() {
+  secondOperand = displayValue;
+
+  if (currentOperatior === '+') {
+    displayValue = Number(firstOperand) + Number(secondOperand)
+  }
+  if (currentOperatior === '-') {
+    displayValue = Number(firstOperand) - Number(secondOperand);
+  }
+  if (currentOperatior === "×") {
+    displayValue = Number(firstOperand) * Number(secondOperand);
+  }
+  if (currentOperatior === "÷") {
+    displayValue = Number(firstOperand) / Number(secondOperand)
+  }
+
+  firstOperand = displayValue;
+  updateDisplay()
+}
+
 // ====== UPDATE DISPLAY ======
 function updateDisplay() {
     display.value = displayValue
