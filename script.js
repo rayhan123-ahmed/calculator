@@ -19,7 +19,8 @@ const numberButtons = document.querySelectorAll(
 numberButtons.forEach(button =>{
   button.addEventListener('click',()=>{
     if (display.value === '0') {
-       displayValue = button.textContent
+       displayValue += button.textContent
+       shouldResetScreen = false
     } else {
       displayValue += button.textContent
     }
@@ -33,13 +34,15 @@ const operatorButtons = document.querySelectorAll(".operator");
 // ====== BUILD OPERATOR SYSTEM ======
 operatorButtons.forEach(button => {
   button.addEventListener('click',()=>{
-    if (currentOperatior !== null) {
+    if (currentOperatior !== null && !shouldResetScreen) {
       operate()
     }
     firstOperand = displayValue
     currentOperatior = button.textContent;
+    
+    displayValue += ` ${currentOperatior} `  
     shouldResetScreen = true
-
+    updateDisplay()
   })
 })
 
