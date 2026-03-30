@@ -6,7 +6,7 @@ let currentOperatior = null
 let shouldResetScreen = false;
 
 // ====== SELECT DISPLAY ======
-const display = document.querySelectorAll(".display");
+const display = document.querySelector(".display");
 
 
 
