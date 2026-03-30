@@ -27,8 +27,22 @@ numberButtons.forEach(button =>{
   });
 });
 
+// ====== OPERATOR BUTTONS ======
+const operatorButtons = document.querySelectorAll(".operator");
 
+// ====== BUILD OPERATOR SYSTEM ======
+operatorButtons.forEach(button => {
+  button.addEventListener('click',()=>{
+    if (currentOperatior !== null) {
+      operate()
+    }
+    
+    firstOperand = displayValue
+    currentOperatior = button.textContent;
+    shouldResetScreen = true
 
+  })
+})
 
 // ====== UPDATE DISPLAY ======
 function updateDisplay() {
