@@ -36,7 +36,6 @@ operatorButtons.forEach(button => {
     if (currentOperatior !== null) {
       operate()
     }
-    
     firstOperand = displayValue
     currentOperatior = button.textContent;
     shouldResetScreen = true
@@ -64,6 +63,15 @@ function operate() {
   firstOperand = displayValue;
   updateDisplay()
 }
+
+// ====== EQUAL BUTTONS ======
+const equalButton = document.querySelector('.equal');
+// ====== CREAT A EQUAL SYSTEM ======
+equalButton.addEventListener('click',()=>{
+    operate();
+    currentOperatior = null
+    shouldResetScreen = true
+})
 
 // ====== UPDATE DISPLAY ======
 function updateDisplay() {
