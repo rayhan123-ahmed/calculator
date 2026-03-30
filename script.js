@@ -15,7 +15,17 @@ const numberButtons = document.querySelectorAll(
   ".buttons button:not(.operator):not(.equal):not(.clear)",
 );
 
-
+// ====== BUILD NUMBER SYSTEM ======
+numberButtons.forEach(button =>{
+  button.addEventListener('click',()=>{
+    if (display.value === '0') {
+       display.value = button.textContent
+    } else {
+      display.value += button.textContent
+    }
+    updateDisplay()
+  });
+});
 
 
 
